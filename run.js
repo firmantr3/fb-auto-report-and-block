@@ -12,13 +12,18 @@ const puppeteer = require('puppeteer');
   const wordList = [
     `rotan`,
     `kopi`,
+    `besar tt`,
+    `tt besar`,
+    `mengencangkan tt`,
+    `cincin terapi`,
+    `padat kencang besar`,
   ];
   const wordListLevel2 = [
     `top`,
     `viral`,
     `murah`,
     `laris`,
-    `abadi 51`,
+    `abadi`,
     `panjang`,
     `kuat`,
     `ajaib`,
@@ -30,6 +35,7 @@ const puppeteer = require('puppeteer');
     `ranjang`,
     `manjur`,
     `permanen`,
+    `promo`,
   ];
 
   while(!stop) {
@@ -75,7 +81,7 @@ const puppeteer = require('puppeteer');
     
     await page.click(`#to-report-0`);
 
-    console.log(`Blocking ${count.titles[0]}...`);
+    console.log(`Blocking: "${count.titles[0]}"...`);
 
     await page.waitForSelector(`div.j83agx80.btwxx1t3.buofh1pr.datstx6m.k4urcfbm.psu0lv52`, {visible: true});
     
@@ -123,7 +129,7 @@ const puppeteer = require('puppeteer');
     await page.click(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(4) > div.ehxjyohh.kr520xx4.j9ispegn.poy2od1o.dhix69tm.byvelhso.buofh1pr.j83agx80.rq0escxv.bp9cbjyn > div.pedkr2u6.pmk7jnqg.kp4lslxn.s0qqerhg.ms05siws.pnx7fd3z.nf1dmkjp > span > div`);
 
     blockedCount++;
-    console.log(`Blocked ${count.titles[0]}!`);
+    console.log(`Blocked: "${count.titles[0]}"!`);
     console.log(`Total ${blockedCount} items blocked so far...`);
 
     await page.waitForTimeout(1000);
