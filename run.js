@@ -21,6 +21,8 @@ const puppeteer = require('puppeteer');
     `terangsang`,
     `padat, kencang`,
     `tetes`,
+    `PADAT BERISI DAN KENCANG`,
+    `bulat KENCANG`,
   ];
   const wordListLevel2 = [
     `top`,
@@ -78,7 +80,7 @@ const puppeteer = require('puppeteer');
       console.log(`Keyword not found, scrolling...`);
 
       await page.evaluate(() => {
-        window.scrollBy(0, 500);
+        window.scrollBy(0, document.body.scrollHeight);
       });
 
       const errorMessage = await page.$(`body > div.l9j0dhe7.tkr6xdv7 > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div`);
@@ -153,6 +155,8 @@ const puppeteer = require('puppeteer');
     } catch (error) {
       console.log("Error", error);
     }
+
+    await page.goto(`https://www.facebook.com/marketplace`);
 
     await page.reload();
   }
