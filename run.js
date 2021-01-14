@@ -7,6 +7,7 @@ const puppeteer = require('puppeteer');
   const page = pages[1];
   // await page.screenshot({ path: 'picture.png' });
   let stop = false;
+  let blockedCount = 0;
 
   const wordList = [
     `rotan`,
@@ -15,8 +16,8 @@ const puppeteer = require('puppeteer');
   const wordListLevel2 = [
     `top`,
     `viral`,
-    `termurah`,
-    `terlaris`,
+    `murah`,
+    `laris`,
     `abadi 51`,
     `panjang`,
     `kuat`,
@@ -27,6 +28,8 @@ const puppeteer = require('puppeteer');
     `ampuh`,
     `loyo`,
     `ranjang`,
+    `manjur`,
+    `permanen`,
   ];
 
   while(!stop) {
@@ -59,7 +62,7 @@ const puppeteer = require('puppeteer');
 
     // not found
     if(!count.counter) {
-      console.log(`keyword not found, scrolling...`);
+      console.log(`Keyword not found, scrolling...`);
 
       await page.evaluate(() => {
         window.scrollBy(0, 500);
@@ -72,7 +75,7 @@ const puppeteer = require('puppeteer');
     
     await page.click(`#to-report-0`);
 
-    console.log(`blocking ${count.titles[0]}...`);
+    console.log(`Blocking ${count.titles[0]}...`);
 
     await page.waitForSelector(`div.j83agx80.btwxx1t3.buofh1pr.datstx6m.k4urcfbm.psu0lv52`, {visible: true});
     
@@ -111,6 +114,7 @@ const puppeteer = require('puppeteer');
     await page.waitForTimeout(2000);
     
     // finish
+    await page.waitForSelector(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`);
     await page.click(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`);
 
     await page.waitForTimeout(1000);
@@ -118,7 +122,9 @@ const puppeteer = require('puppeteer');
     // close
     await page.click(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(4) > div.ehxjyohh.kr520xx4.j9ispegn.poy2od1o.dhix69tm.byvelhso.buofh1pr.j83agx80.rq0escxv.bp9cbjyn > div.pedkr2u6.pmk7jnqg.kp4lslxn.s0qqerhg.ms05siws.pnx7fd3z.nf1dmkjp > span > div`);
 
-    console.log(`blocked ${count.titles[0]}!`);
+    blockedCount++;
+    console.log(`Blocked ${count.titles[0]}!`);
+    console.log(`Total ${blockedCount} items blocked so far...`);
 
     await page.waitForTimeout(1000);
 
