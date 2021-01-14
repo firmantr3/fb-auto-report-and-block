@@ -28,12 +28,12 @@ Jalankan script init, dan jangan di close, biarkan jalan di shell:
 node init
 ```
 
-Jendela chromium akan terbuka, login ke akun FBmu, lalu arahkan ke halaman marketplace.
+Jendela chromium akan terbuka, login ke akun FBmu, lalu arahkan ke halaman marketplace. Copy address websocket dari output run script diatas yang diawali dengan `ws://`.
 
 Setelah itu buka window / tab shell baru, cd ke folder repo ini lagi, jalankan script run:
 
 ```bash
-node run
+node run {websocketAddress}
 ```
 
 Untuk menghentikan tinggal di close saja 2 shell yang menjalankan script tadi.
