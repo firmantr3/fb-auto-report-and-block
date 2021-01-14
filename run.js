@@ -36,6 +36,8 @@ const puppeteer = require('puppeteer');
     `manjur`,
     `permanen`,
     `promo`,
+    `sakti`,
+    `gedhe`,
   ];
 
   while(!stop) {
