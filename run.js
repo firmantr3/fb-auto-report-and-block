@@ -7,6 +7,8 @@ const puppeteer = require('puppeteer');
   await page.goto(`https://www.facebook.com/marketplace`);
   let stop = false;
   let blockedCount = 0;
+  let scrollCount = 0;
+  let maxScrollCount = 20;
 
   const wordList = [
     `rotan`,
@@ -104,7 +106,15 @@ const puppeteer = require('puppeteer');
         await page.click(`body > div.l9j0dhe7.tkr6xdv7 > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div > div.gjzvkazv.dati1w0a.f10w8fjw.hv4rvrfc.ecm0bbzt.cbu4d94t.j83agx80.c4hnarmi > div`);
       }
 
+      scrollCount++;
+
       await page.waitForTimeout(1000);
+
+      if(scrollCount > maxScrollCount) {
+        scrollCount = 0;
+        console.log(`Max scroll count reached, reloading...`);
+        await page.reload();
+      }
 
       continue;
     }
@@ -172,8 +182,13 @@ const puppeteer = require('puppeteer');
       console.log("Error", error);
     }
 
+    // reset scroll counter
+    scrollCount = 0;
+
     try {
-      await page.goto(`https://www.facebook.com/marketplace`);
+      await page.goto(`https://www.facebook.com/marketplace`, {
+        waitUntil: 'networkidle2',
+      });
     } catch (error) {
       console.log(error);
 
