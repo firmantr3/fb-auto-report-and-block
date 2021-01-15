@@ -29,6 +29,7 @@ const puppeteer = require('puppeteer');
     `HASIL TERBUKTI`,
     `LIPSTIK AJAIB`,
     `black jade`,
+    `minyaksakti`,
   ];
   const wordListLevel2 = [
     `top`,
@@ -56,6 +57,8 @@ const puppeteer = require('puppeteer');
     `kuda`,
     `tenaga`,
     `semburan`,
+    `dewa`,
+    `wanita`,
   ];
 
   while(!stop) {
