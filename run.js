@@ -3,8 +3,8 @@ const puppeteer = require('puppeteer');
 (async () => {
   const endpoint = process.argv.slice(2);
   const browser = await puppeteer.connect({ browserWSEndpoint: endpoint }); // This is where it fails
-  const pages = await browser.pages();
-  const page = pages[0];
+  const page = await browser.newPage();
+  await page.goto(`https://www.facebook.com/marketplace`);
   let stop = false;
   let blockedCount = 0;
 
