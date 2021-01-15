@@ -4,13 +4,15 @@ const puppeteer = require('puppeteer');
   const endpoint = process.argv.slice(2);
   const browser = await puppeteer.connect({ browserWSEndpoint: endpoint }); // This is where it fails
   const pages = await browser.pages();
-  const page = pages[1];
+  const page = pages[0];
   let stop = false;
   let blockedCount = 0;
 
   const wordList = [
     `rotan`,
+    `r[0oO]t[4aA]n`,
     `kopi`,
+    `coffee`,
     `besar tt`,
     `tt besar`,
     `mengencangkan tt`,
@@ -23,6 +25,10 @@ const puppeteer = require('puppeteer');
     `tetes`,
     `PADAT BERISI DAN KENCANG`,
     `bulat KENCANG`,
+    `besar KENCANG`,
+    `HASIL TERBUKTI`,
+    `LIPSTIK AJAIB`,
+    `black jade`,
   ];
   const wordListLevel2 = [
     `top`,
@@ -45,6 +51,11 @@ const puppeteer = require('puppeteer');
     `sakti`,
     `gedhe`,
     `wikwik`,
+    `arab`,
+    `diskon`,
+    `kuda`,
+    `tenaga`,
+    `semburan`,
   ];
 
   while(!stop) {
@@ -55,18 +66,20 @@ const puppeteer = require('puppeteer');
       let counter = 0;
       const titles = new Array;
 
-      titlesArray.forEach((title) => {
+      titlesArray.every((title) => {
         const titleText = String(title.innerText);
         const regexWordlist = new RegExp(wordList.join(`|`), `i`);
         const regexWordlistLevel2 = new RegExp(wordListLevel2.join(`|`), `i`);
         if (!(titleText.match(regexWordlist) && titleText.match(regexWordlistLevel2))) {
-          return;
+          return true;
         }
   
         title.id = `to-report-${counter}`;
         counter++;
   
         titles.push(titleText);
+
+        return false;
       });
   
       return {
@@ -157,8 +170,6 @@ const puppeteer = require('puppeteer');
     }
 
     await page.goto(`https://www.facebook.com/marketplace`);
-
-    await page.reload();
   }
 
   await browser.disconnect();

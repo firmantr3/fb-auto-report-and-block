@@ -6,7 +6,9 @@ const puppeteer = require('puppeteer');
     devtools: true,
     args: ['--start-maximized=true']
   });
-  const page = await browser.newPage();
+  const pages = await browser.pages();
+  const page = pages.length ? pages[0] : await browser.newPage();
+
   await page.goto('https://facebook.com');
 
   const endpoint = browser.wsEndpoint();
