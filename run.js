@@ -169,7 +169,13 @@ const puppeteer = require('puppeteer');
       console.log("Error", error);
     }
 
-    await page.goto(`https://www.facebook.com/marketplace`);
+    try {
+      await page.goto(`https://www.facebook.com/marketplace`);
+    } catch (error) {
+      console.log(error);
+
+      await page.reload();
+    }
   }
 
   await browser.disconnect();
