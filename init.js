@@ -3,8 +3,8 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({
     headless: false,
-    devtools: true,
-    args: ['--start-maximized=true']
+    args: ['--start-maximized=true'],
+    defaultViewport: null,
   });
   const pages = await browser.pages();
   const page = pages.length ? pages[0] : await browser.newPage();

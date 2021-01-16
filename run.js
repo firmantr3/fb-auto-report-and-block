@@ -4,15 +4,16 @@ const puppeteer = require('puppeteer');
   const endpoint = process.argv.slice(2);
   const browser = await puppeteer.connect({ browserWSEndpoint: endpoint }); // This is where it fails
   const page = await browser.newPage();
-  await page.goto(`https://www.facebook.com/marketplace`);
+  await page.goto(`https://www.facebook.com/marketplace`, {
+    waitUntil: 'networkidle2',
+  });
   let stop = false;
   let blockedCount = 0;
   let scrollCount = 0;
   let maxScrollCount = 20;
 
   const wordList = [
-    `rotan`,
-    `r[0oO]t[4aA]n`,
+    `[rR]+[0oO]+[tT]+[4aA]+[nN]+`,
     `kopi`,
     `coffee`,
     `besar tt`,
@@ -40,7 +41,7 @@ const puppeteer = require('puppeteer');
     `laris`,
     `abadi`,
     `panjang`,
-    `kuat`,
+    `[kK]+[uU]+[aA]+[tT]+`,
     `ajaib`,
     `besar`,
     `tahan lama`,
@@ -61,6 +62,7 @@ const puppeteer = require('puppeteer');
     `semburan`,
     `dewa`,
     `wanita`,
+    `[rR]+[0oO]+[tT]+[4aA]+[nN]+ [hH]+[iI]+[tT]+[aA]+[mM]+`,
   ];
 
   while(!stop) {
