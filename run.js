@@ -63,6 +63,7 @@ const puppeteer = require('puppeteer');
     `dewa`,
     `wanita`,
     `[rR]+[0oO]+[tT]+[4aA]+[nN]+ [hH]+[iI]+[tT]+[aA]+[mM]+`,
+    `super`,
   ];
 
   while(!stop) {
@@ -77,7 +78,15 @@ const puppeteer = require('puppeteer');
         const titleText = String(title.innerText);
         const regexWordlist = new RegExp(wordList.join(`|`), `i`);
         const regexWordlistLevel2 = new RegExp(wordListLevel2.join(`|`), `i`);
-        if (!(titleText.match(regexWordlist) && titleText.match(regexWordlistLevel2))) {
+        if (
+          !(
+            titleText.match(regexWordlist) &&
+            (
+              titleText == regexWordlist ||
+              titleText.match(regexWordlistLevel2)
+            )
+          )
+        ) {
           return true;
         }
   
