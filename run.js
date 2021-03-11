@@ -64,6 +64,7 @@ const puppeteer = require('puppeteer');
     `wanita`,
     `[rR]+[0oO]+[tT]+[4aA]+[nN]+ [hH]+[iI]+[tT]+[aA]+[mM]+`,
     `super`,
+    `ganas`,
   ];
 
   while(!stop) {
@@ -135,56 +136,57 @@ const puppeteer = require('puppeteer');
   
       console.log(`Blocking: "${count.titles[0]}"...`);
   
-      await page.waitForSelector(`div.j83agx80.btwxx1t3.buofh1pr.datstx6m.k4urcfbm.psu0lv52`, {visible: true});
+      await page.waitForSelector(`div.j83agx80.buofh1pr.k4urcfbm`, {visible: true});
 
-      const postMenuSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.j83agx80.cbu4d94t.h3gjbzrl.l9j0dhe7.du4w35lb.qsy8amke > div.nznu9b0o.ji94ytn4.q10oee1b.r893ighp.ni8dbmo4.stjgntxs.k4urcfbm.spskuzq3.a156tdzh > div > div.cwj9ozl2.j83agx80.cbu4d94t.datstx6m.owwhemhu.ni8dbmo4.stjgntxs.spskuzq3 > div > div.am9z0op8.j83agx80.o387gat7.datstx6m.l9j0dhe7.k4urcfbm.jr1d8bo4.dwxd3oue > div > div.q5bimw55.rpm2j7zs.k7i0oixp.gvuykj2m.j83agx80.cbu4d94t.ni8dbmo4.eg9m0zos.l9j0dhe7.du4w35lb.ofs802cu.pohlnb88.dkue75c7.mb9wzai9.d8ncny3e.buofh1pr.g5gj957u.tgvbjcpo.l56l04vs.r57mb794.kh7kg01d.c3g1iek1.k4xni2cv > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div div div.cxmmr5t8 > div > span > div`;
+      const postMenuSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.j83agx80.cbu4d94t.h3gjbzrl.l9j0dhe7.du4w35lb.qsy8amke > div.nznu9b0o.ji94ytn4.q10oee1b.r893ighp.ni8dbmo4.stjgntxs.k4urcfbm.spskuzq3.a156tdzh > div > div.cwj9ozl2.j83agx80.cbu4d94t.datstx6m.owwhemhu.ni8dbmo4.stjgntxs.spskuzq3 > div > div.am9z0op8.j83agx80.o387gat7.datstx6m.l9j0dhe7.k4urcfbm.jr1d8bo4.dwxd3oue > div > div.q5bimw55.rpm2j7zs.k7i0oixp.gvuykj2m.j83agx80.cbu4d94t.ni8dbmo4.eg9m0zos.l9j0dhe7.du4w35lb.ofs802cu.pohlnb88.dkue75c7.mb9wzai9.d8ncny3e.buofh1pr.g5gj957u.tgvbjcpo.l56l04vs.r57mb794.kh7kg01d.c3g1iek1.k4xni2cv.k4urcfbm > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div:nth-child(1) > div:nth-child(4) > div > div.cxmmr5t8 > div > span > div`;
       await page.waitForFunction(({ postMenuSelector }) => {
         return document.querySelectorAll(postMenuSelector).length;
       }, {}, { postMenuSelector });
 
       // menu ...
       await page.evaluate(() => {
-        const postMenuSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.j83agx80.cbu4d94t.h3gjbzrl.l9j0dhe7.du4w35lb.qsy8amke > div.nznu9b0o.ji94ytn4.q10oee1b.r893ighp.ni8dbmo4.stjgntxs.k4urcfbm.spskuzq3.a156tdzh > div > div.cwj9ozl2.j83agx80.cbu4d94t.datstx6m.owwhemhu.ni8dbmo4.stjgntxs.spskuzq3 > div > div.am9z0op8.j83agx80.o387gat7.datstx6m.l9j0dhe7.k4urcfbm.jr1d8bo4.dwxd3oue > div > div.q5bimw55.rpm2j7zs.k7i0oixp.gvuykj2m.j83agx80.cbu4d94t.ni8dbmo4.eg9m0zos.l9j0dhe7.du4w35lb.ofs802cu.pohlnb88.dkue75c7.mb9wzai9.d8ncny3e.buofh1pr.g5gj957u.tgvbjcpo.l56l04vs.r57mb794.kh7kg01d.c3g1iek1.k4xni2cv > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div div div.cxmmr5t8 > div > span > div`;
+        const postMenuSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div.j83agx80.cbu4d94t.h3gjbzrl.l9j0dhe7.du4w35lb.qsy8amke > div.nznu9b0o.ji94ytn4.q10oee1b.r893ighp.ni8dbmo4.stjgntxs.k4urcfbm.spskuzq3.a156tdzh > div > div.cwj9ozl2.j83agx80.cbu4d94t.datstx6m.owwhemhu.ni8dbmo4.stjgntxs.spskuzq3 > div > div.am9z0op8.j83agx80.o387gat7.datstx6m.l9j0dhe7.k4urcfbm.jr1d8bo4.dwxd3oue > div > div.q5bimw55.rpm2j7zs.k7i0oixp.gvuykj2m.j83agx80.cbu4d94t.ni8dbmo4.eg9m0zos.l9j0dhe7.du4w35lb.ofs802cu.pohlnb88.dkue75c7.mb9wzai9.d8ncny3e.buofh1pr.g5gj957u.tgvbjcpo.l56l04vs.r57mb794.kh7kg01d.c3g1iek1.k4xni2cv.k4urcfbm > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div:nth-child(1) > div:nth-child(4) > div > div.cxmmr5t8 > div > span > div`;
         const postMenus = document.querySelectorAll(postMenuSelector);
         const postMenusArray = Array.prototype.slice.call(postMenus);
         postMenusArray[postMenusArray.length - 1].click();
       })
 
       // laporkan postingan
-      const reportButtonSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(4) > div > div > div.j34wkznp.qp9yad78.pmk7jnqg.kr520xx4 > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div.rq0escxv.jgsskzai.cwj9ozl2.nwpbqux9.ue3kfks5.pw54ja7n.uo3d90p7.l82x9zwi.ni8dbmo4.stjgntxs > div > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div > div:nth-child(2)`;
+      const reportButtonSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(4) > div > div > div.j34wkznp.qp9yad78.pmk7jnqg.kr520xx4 > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div.rq0escxv.jgsskzai.cwj9ozl2.nwpbqux9.ue3kfks5.pw54ja7n.uo3d90p7.l82x9zwi.ni8dbmo4.stjgntxs > div > div.j83agx80.cbu4d94t.buofh1pr.l9j0dhe7 > div > div:nth-child(2)`;
       await page.waitForSelector(reportButtonSelector);
       await page.click(reportButtonSelector);
 
       // sexual content check
-      const sexualContentTagSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.gs1a9yip.owycx6da.btwxx1t3.hv4rvrfc.dati1w0a.jb3vyjys.b5q2rw42.lq239pai.mysgfdmx.hddg9phg > div > div > button:nth-child(6)`;
+      const sexualContentTagSelector = `div > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.gs1a9yip.owycx6da.btwxx1t3.hv4rvrfc.dati1w0a.jb3vyjys.b5q2rw42.lq239pai.mysgfdmx.hddg9phg > div > div > button:nth-child(6)`;
       await page.waitForSelector(sexualContentTagSelector);
       await page.click(sexualContentTagSelector);
 
-      const sendReportButtonSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`;
+      const sendReportButtonSelector = `div > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`;
       await page.waitForFunction(({ sendReportButtonSelector }) => {
         return document.querySelector(sendReportButtonSelector).ariaDisabled === null;
       }, {}, { sendReportButtonSelector });
       // send
       await page.click(sendReportButtonSelector);
 
-      const blockPosterButtonSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div`;
+      const blockPosterButtonSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div`;
       await page.waitForSelector(blockPosterButtonSelector, { visible: true });
 
       // check block
       await page.click(blockPosterButtonSelector);
 
-      const blockButtonSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div > div > div.ow4ym5g4.auili1gw.rq0escxv.j83agx80.buofh1pr.g5gj957u.i1fnvgqd.oygrvhab.cxmmr5t8.hcukyx3x.kvgmc6g5.tgvbjcpo.hpfvmrgz.qt6c0cv9.rz4wbd8a.a8nywdso.jb3vyjys.du4w35lb.bp9cbjyn.btwxx1t3.l9j0dhe7 > div > div.j83agx80.cbu4d94t.a9txdygg.fnu23jab.buofh1pr.iuny7tx3.ipjc6fyt > div > div > div:nth-child(1) > div.oajrlxb2.s1i5eluu.gcieejh5.bn081pho.humdl8nn.izx4hr6d.rq0escxv.nhd2j8a9.j83agx80.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.jb3vyjys.d1544ag0.qt6c0cv9.tw6a2znq.i1ao9s8h.esuyzwwr.f1sip0of.lzcic4wl.l9j0dhe7.abiwlrkh.p8dawk7l.beltcj47.p86d2i9g.aot14ch1.kzx2olss.cbu4d94t.taijpn5t.ni8dbmo4.stjgntxs.k4urcfbm.qypqp5cg`;
+      const blockButtonSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div > div > div.ow4ym5g4.auili1gw.rq0escxv.j83agx80.buofh1pr.g5gj957u.i1fnvgqd.oygrvhab.cxmmr5t8.hcukyx3x.kvgmc6g5.tgvbjcpo.hpfvmrgz.qt6c0cv9.rz4wbd8a.a8nywdso.jb3vyjys.du4w35lb.bp9cbjyn.btwxx1t3.l9j0dhe7 > div > div.j83agx80.cbu4d94t.a9txdygg.fnu23jab.buofh1pr.iuny7tx3.ipjc6fyt > div > div > div:nth-child(1)`;
       await page.waitForSelector(blockButtonSelector, { visible: true });
 
       // block
       await page.click(blockButtonSelector);
 
-      const blockedDescriptionSelector = `#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div > div`;
+      const blockedDescriptionSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > div > div > div:nth-child(2) > div > div > div`;
       await page.waitForSelector(blockedDescriptionSelector, { visible: true });
 
       // finish
-      await page.waitForSelector(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`);
-      await page.click(`#mount_0_0 > div > div:nth-child(1) > div.rq0escxv.l9j0dhe7.du4w35lb > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div.rq0escxv.l9j0dhe7.du4w35lb > div > div:nth-child(2) > div > div > div > div > div.ihqw7lf3.i1fnvgqd.j83agx80.opwvks06 > div:nth-child(2) > div > div > div`);
+      const finishButtonSelector = `div > div > div:nth-child(1) > div > div:nth-child(7) > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(2) > div > div > div > div > div > div:nth-child(2) > div > div > div`;
+      await page.waitForSelector(finishButtonSelector);
+      await page.click(finishButtonSelector);
 
       blockedCount++;
       console.log(`Blocked: "${count.titles[0]}"!`);
